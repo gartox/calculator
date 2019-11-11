@@ -1,4 +1,20 @@
 html {
+  /* Box sizing calcula ancho y alto toal de un elemento */
+  /*
+    Reference: https://developer.mozilla.org/es/docs/Web/CSS/box-sizing
+    :=>: content-box es el comportamiento CSS por defecto para el tamaño de la caja 
+    (box-sizing). Si se define el ancho de un elemento en 100 pixeles, 
+    la caja del contenido del elemento tendrá 100 pixeles de ancho, y el 
+    ancho de cualquier borde o relleno ser añadirá al ancho final desplegado.
+    
+    :=>: Border-box le dice al navegador tomar en cuenta para cualquier valor 
+    que se especifique de borde o de relleno para el ancho o alto de un elemento. 
+    Es decir, si se define un elemento con un ancho de 100 pixeles. Esos 100 
+    pixeles incluíran cualquier borde o relleno que se añadan, y la caja de 
+    contenido se encogerá para absorber ese ancho extra. Esto típicamente hace 
+    mucho más fácil dimensionar elementos.
+
+  */
   box-sizing: border-box;
 }
 
@@ -13,4 +29,84 @@ body {
 
 .wrapper {
   width: 400px;
+  background-color: black;
+  color: white;
+}
+
+.calc-button-row {
+  display: flex;
+  /* flexbox es la forma abreviado de usar flex-direction y flex-wrap */
+
+  /*
+    flex-direction: [ row | row-reverse | column  | column-reverse ]
+  */
+
+  /* 
+    flex-wrap: [ nowrap | wrap | wrap-reverse ]
+  */
+
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 0.5%;
+}
+
+.screen {
+  text-align: right;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 20px 5px;
+  font-size: 40px;
+}
+
+.calc-button {
+  background-color: #d8d9db;
+  color: black;
+  border: none;
+  font-size: 40px;
+  height: 100px;
+  flex-basis: 24.5%;
+}
+
+.calc-button:hover {
+  background: #ebebeb;
+  cursor: pointer;
+}
+
+.calc-button:active {
+  background: #bbbcbe;
+  cursor: pointer;
+}
+
+.double {
+  flex-basis: 49.7%;
+}
+
+.triple {
+  flex-basis: 74.8%;
+}
+/*
+.operators {
+  background: orange;
+  color: white;
+}
+
+.operators:hover {
+  background: rgb(207, 121, 9);
+}
+
+.operators:active {
+  background: orangered;
+} */
+
+.calc-button:last-child {
+  background: orange;
+  color: white;
+}
+
+.calc-button:last-child:hover {
+  background: rgb(207, 121, 9);
+}
+
+.calc-button:last-child:active {
+  background: orangered;
 }
